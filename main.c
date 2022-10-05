@@ -120,30 +120,30 @@ void function_set(){
 void display(uint8_t display_state){
 	if(display_state == ON){
 		display_control |= LCD_DISPLAY_ON;
-		command(display | cursor | cursor_blink, 0);
+		command(display_control, 0);
 	}else{
 		display_control &= LCD_DISPLAY_ON;
-		command(display | cursor | cursor_blink, 0);
+		command(display_control, 0);
 	}
 }
 
 void cursor(uint8_t cursor_state){
 	if(cursor_state == ON){
 		display_control |= LCD_CURSOR_ON;
-		command(display | cursor | cursor_blink, 0);
+		command(display_control, 0);
 	}else{
 		cursor &= LCD_CURSOR_ON;
-		command(display | cursor | cursor_blink, 0);
+		command(display_control, 0);
 	}
 }
 
 void cursor_blink(uint8_t blink_state){
 	if(blink_state == ON){
 		display_control |= LCD_BLINK_ON;
-		command(display | cursor | cursor_blink, 0);
+		command(display_control, 0);
 	}else{
 		display_control &= LCD_BLINK_ON;
-		command(display | cursor | cursor_blink, 0);
+		command(display_control, 0);
 	}
 }
 
